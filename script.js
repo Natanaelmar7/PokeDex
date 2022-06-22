@@ -4,20 +4,19 @@ async function pokemon(n,c, url) {
      
  for(i = n; i < c; i++) {
        
-       const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-       const dataJson = await data.json() 
+      const data = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+      const dataJson = await data.json() 
    
       const text = dataJson.name 
 
-      let peixinho = `
-      <div id = ${i}>
-        <img src = https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png >
-        <p>Type</p>
-         <p>${text}</p>
+      let pokemons = `
+       <div id = ${i}>
+         <img src = https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png >
+          <p>${text}</p>
        </div>
       `
 
-     container.innerHTML += peixinho // separate the pokemons in boxes
+      container.innerHTML += pokemons // separate the pokemons in boxes
         
       console.log(dataJson)
 
@@ -25,6 +24,7 @@ async function pokemon(n,c, url) {
 
  }
 
+pokemon() 
 
 
 
